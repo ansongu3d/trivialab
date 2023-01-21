@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trivia</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <section class="log-in">
+      <h1>Trivia</h1>
+      <p>Login</p>
+      <form id="login_form">
+        <section id="error-message"></section>
+        <fieldset>
+            <label for="">Username</label><br />
+            <input type="username" required name="username" />
+          </fieldset>
+        <fieldset>
+          <label for="">Email</label><br />
+          <input type="text" required  name="email" />
+        </fieldset>
+        <fieldset>
+          <label for="">Password</label><br />
+          <input type="password" required name="password" />
+        </fieldset>
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <script>
+      const form = document.getElementById('login_form');
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const data = {
+          username: formData.get('username'),
+          email: formData.get('email'),
+          password: formData.get('password')
+        };
+        axios.post('/trivia/login', data).then(() => {
+          location = '/login.html';
+        }).catch((err) => {
+          if (err.response.status === 500) {
+            alert('Wrong Password or Email, Please try again.');
+          } else {
+            alert(err.response.data.message);
+          }
+        });;
+      })
+    </script>
+  </body>
+</html>
