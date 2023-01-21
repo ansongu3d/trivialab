@@ -20,6 +20,9 @@ app.use(express.json());
 const db = new pg.Pool({
   // database: "trivia_project",
   connectionString: process.env.DATABASE_URL || "trivia_project",
+  ssl: {
+    rejectUnauthorized: false
+  }
 })
 
 app.use(
