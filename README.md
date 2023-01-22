@@ -1,7 +1,7 @@
 # Random Quiz Generator
 
 ## Installation
-- Please git clone this repo `git@github.com:annpham11/Project-3.git` to your local machine
+- Please git clone this repo `git@github.com:ansongu3d/trivialab.git` to your local machine
 
 ## Development
 ## Project setup
@@ -33,7 +33,7 @@ cd ..
 git add .
 git commit -m "heroku build"
 git push heroku BRANCH-NAME:main
-heroku app: https://trivia-night01-app.herokuapp.com/ 
+heroku app: https://calm-refuge-42873.herokuapp.com/ 
 
 
 ```
@@ -76,3 +76,5 @@ Mockup created with Figma
 - Allow users to share their score on social media
 - Integrate a ranking system based on user scores
 - Make the application available to members who don't have accounts or aren't willing to signup
+
+updated by Anson 
